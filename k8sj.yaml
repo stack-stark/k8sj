@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8sj-deploy
+  namespace: front-end
+  labels:
+    app: k8sj
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: k8sj
+  template:
+    metadata:
+      labels:
+        app: k8sj
+    spec:
+      containers:
+        - name: k8sj
+          image: k8sjv2
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
+              name: k8sjport
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8sj
+  namespace: front-end
+spec:
+  type: NodePort
+  selector:
+    app: k8sj
+  ports:
+    - name: k8sjport
+      protocol: TCP
+      port: 80
+      targetPort: k8sjport

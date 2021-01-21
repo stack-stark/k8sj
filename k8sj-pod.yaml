@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8sj
+  namespace: front-end
+spec:
+  containers:
+  - name: k8sj
+    image: k8sj
+    ports:
+    - containerPort: 80
+      name: k8sjport
