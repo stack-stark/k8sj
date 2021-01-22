@@ -42,7 +42,7 @@ pipeline {
         stage('检查状态') {
             steps {
                 echo '****************************** check start... ******************************'
-                sh 'kubectl describe pods  --namespace front-end' 
+                sh 'kubectl get services --namespace front-end' 
             }
         }
 
