@@ -27,7 +27,7 @@ pipeline {
                 // bat 'docker ps -a|grep $NAME|awk \'{print $1}\'|xargs -i docker stop {}|xargs -i docker rm {}'
                 // bat 'docker images|grep $NAME|grep dev|awk \'{print $3}\'|xargs -i docker rmi {}'
                 echo '****************************** build image... ******************************'
-                bat 'docker build -t k8sjv5 .'
+                bat 'docker build -t k8sjv6 .'
                 bat 'docker images'
             }
         }
@@ -36,6 +36,7 @@ pipeline {
             steps {
                 echo '****************************** run start... ******************************'
                 bat 'kubectl apply  -f k8sj.yaml'
+                bat 'docker image rm k8sjv6'
             }
         }   
 

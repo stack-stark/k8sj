@@ -36,4 +36,5 @@ spec:
     - name: k8sjport
       protocol: TCP
       port: 80
+      nodePort: 4399
       targetPort: k8sjport
