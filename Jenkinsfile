@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo '****************************** vue start... ******************************'
                 bat 'npm install --registry=https://registry.npm.taobao.org'
-                bat 'npm run build-prod'
+                bat 'npm run build'
             }
         }
 
