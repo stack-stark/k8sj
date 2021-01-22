@@ -27,7 +27,7 @@ pipeline {
                 // bat 'docker ps -a|grep $NAME|awk \'{print $1}\'|xargs -i docker stop {}|xargs -i docker rm {}'
                 // bat 'docker images|grep $NAME|grep dev|awk \'{print $3}\'|xargs -i docker rmi {}'
                 echo '****************************** build image... ******************************'
-                bat 'docker build -t k8sjv3 .'
+                bat 'docker build -t k8sjv4 .'
                 bat 'docker images'
             }
         }
