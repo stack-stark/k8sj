@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: k8sj
-          image: k8sjv2
+          image: k8sjv3
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
